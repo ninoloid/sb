@@ -1,4 +1,5 @@
 const movieService = require('../service')
+const dbLogger = require('../../../helpers/logger/dbLogger')
 
 const searchMovie = async (req, res) => {
   const result = await movieService.searchMovie(req.query)
@@ -15,8 +16,8 @@ const getMovieDetails = async (req, res) => {
 }
 
 const init = router => {
-  router.get('/search', searchMovie)
-  router.get('/detail', getMovieDetails)
+  router.get('/search', dbLogger, searchMovie)
+  router.get('/detail', dbLogger, getMovieDetails)
 }
 
 

@@ -4,7 +4,9 @@
   "description": "BE Test of Stockbit",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "db-init": "cd src && sequelize db:create && sequelize db:migrate",
+    "dev": "nodemon src/index.js",
+    "integration": "NODE_EMV=test mocha \"src/test/integration/*.test.js\" --timeout=5000"
   },
   "author": "Ahmad MSA",
   "license": "ISC",
@@ -13,10 +15,15 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "require-dir": "^1.2.0",
     "sequelize": "^6.7.0"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
     "nodemon": "^2.0.13",
-    "sequelize-cli": "^6.2.0"
+    "sequelize-cli": "^6.2.0",
+    "supertest": "^6.1.6"
   }
 }

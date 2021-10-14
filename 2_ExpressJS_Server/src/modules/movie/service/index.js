@@ -36,7 +36,6 @@ const getMovieDetails = async ({ title, id }) => {
       data: result.data
     }
   } catch (err) {
-    console.log('eeeeee', err);
     return {
       error: true,
       code: err.response && err.response.status ? err.response.status : 500,
