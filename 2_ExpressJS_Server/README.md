@@ -30,6 +30,6 @@ Note: "Page" is optional
 
 ### Detail of a Movie
 ```
-http://${server_url}/search?title=&id=
+http://${server_url}/detail?title=&id=
 ```
 Note: The most important query in this endpoint is title, so if you input both of available query (title & also id), this server will use title (instead of id) in searching
